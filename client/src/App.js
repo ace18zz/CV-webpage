@@ -1,35 +1,40 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import HomeComponent from "./components/Home";
-import AboutComponent from "./components/About";
-import ContactComponent from "./components/Contact";
-import ProjectsComponent from "./components/Projects";
+import Home from "./components/Home";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Projects from "./components/Projects";
 
-
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <header>
-          <Navbar />
-        </header>
+    <div className="App">
+      <header>
+        <Navbar />
+      </header>
 
-        <Routes>
-          <Route path="about" element={<AboutComponent />} />
-          <Route path="contact" element={<ContactComponent />} />
-          <Route path="projects" element={<ProjectsComponent />} />
-          <Route path="/" element={<HomeComponent />} />
-        </Routes>
-
-        <footer>
-          <p>Created for learning purposes.</p>
-        </footer>
+      <div id="home-section">
+        <Home />
       </div>
-    </Router>
+
+      <div id="projects-section">
+        <Projects />
+      </div>
+
+      {/* <div id="about-section">
+        <About />
+      </div> */}
+
+      {/* <div id="contact-section">
+        <Contact />
+      </div> */}
+
+      <footer>
+        <p>Created for learning purposes.</p>
+      </footer>
+    </div>
   );
 }
 

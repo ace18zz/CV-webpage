@@ -7,6 +7,12 @@ const projectsData = [
     imageUrl: "path_to_image_1.jpg",
     projectUrl: "http://example.com"
   },
+  {
+    title: "Project 2",
+    description: "This is a brief description of Project 1.",
+    imageUrl: "path_to_image_1.jpg",
+    projectUrl: "http://example.com"
+  },
   // ... other projects
 ];
 
@@ -21,6 +27,7 @@ function Projects() {
           <a href={project.projectUrl} target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
       ))}
+      
     </div>
   );
 }

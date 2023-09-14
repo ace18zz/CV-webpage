@@ -1,24 +1,59 @@
 import React from "react";
-import { NavLink  } from "react-router-dom";
+import { Link } from "react-scroll";
 
 function Navbar() {
   return (
     <nav>
-      <li>
-        <NavLink to="/" end activeClassName="active-link">
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/about" activeClassName="active-link">
-          About
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/contact" activeClassName="active-link">
-          About
-        </NavLink>
-      </li>
+      <ul>
+        <li>
+          <Link
+            activeClass="active-link"
+            to="home-section"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active-link"
+            to="projects-section"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            My Projects
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active-link"
+            to="about-section"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active-link"
+            to="contact-section"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            Contact
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

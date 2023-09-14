@@ -1,45 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+:root {
+  --primary-color: #0F2C59;
+  --secondary-color: #FFF4F4;
+  --highlight-color: #F1C376;
+  --transition-speed: 0.3s;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays on top of all other elements */
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+
+}
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.home-section {
+  background-image: url('./background.jpg');
+  background-size: cover;
+  height: 100vh; /* 全屏高度 */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* 根据你的背景颜色调整文字颜色 */
 }
 
 .App {
-  text-align: center;
+  margin-top: 60px; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Bitter', serif;
 }
 
 header, footer {
-  background-color: #282c34;
+  background: var(--primary-color);
   color: white;
-  padding: 1rem 0;
+  padding: 1rem;
+  text-align: center;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
+nav li {
+  display: inline-block;
   margin-right: 20px;
 }
 
-main {
-  padding: 2rem 0;
+nav li:last-child {
+  margin-right: 0;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+nav a {
+  text-decoration: none;
+  color: white; 
+  transition: border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
-nav ul li {
-  cursor: pointer;
-  transition: color 0.3s;
+nav a:hover, nav a.active-link {
+  border-bottom: 2px solid white;
 }
 
-nav ul li:hover {
-  color: gray;
+
+
+.mouse-cursor {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  visibility: hidden; 
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
 }
 
+
+/* 当鼠标点击时，增大其大小 */
+.mouse-cursor.clicked {
+  width: 70px;
+  height: 70px;
+}
+
+.mouse-cursor.active {
+  visibility: visible;
+}
+
+body.cursor-hidden {
+  cursor: none;
+}
