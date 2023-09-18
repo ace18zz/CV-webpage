@@ -1,0 +1,69 @@
+.projects-section {
+    display: flex;
+    overflow-x: auto; /* 为项目列表添加水平滚动条 */
+    white-space: nowrap; /* 防止项目被挤到下一行 */
+    padding: 10px 0; /* 添加一些垂直的填充 */
+    gap: 60px; /* 设置每个项目之间的间距 */
+  }
+  
+  
+  .project-cards-container {
+    display: flex;
+    animation: marquee 60s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .project-wrapper {
+    overflow-x: auto; 
+    overflow-y: hidden;
+    width: 100%; /* 为了确保它占据全部宽度 */
+  }
+  
+  
+  
+  .project-card {
+    position: relative;
+    flex: 0 0 auto; 
+    width: 300px;
+    height: 200px;
+    margin-right: 20px;  
+    overflow: hidden;
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    filter: blur(3px); /* Adjust for desired blur amount */
+  }
+  .project-card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    z-index: 2; /* 确保标题始终位于图片的上方 */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明的黑色背景 */
+    padding: 8px 12px; /* 标题周围的填充 */
+    border-radius: 5px; /* 为背景添加轻微的圆角 */
+  }
+  
+  .project-card:hover {
+    z-index: 10;  /* 当卡片放大时，确保它在其他卡片之上 */
+  }
+  
+  .project-card p {
+    position: absolute;
+    bottom: 10px;  /* 调整到您想要的位置 */
+    left: 10px;
+    color: white;  /* 调整以确保描述在图片上清晰可见 */
+    background-color: rgba(0, 0, 0, 0.5);  /* 为文字添加半透明的背景，以增强可读性 */
+    padding: 5px;
+    border-radius: 5px;
+  }
